@@ -4,21 +4,19 @@ cask "textshot" do
 
   url "https://github.com/myself659/TextShot/releases/download/v#{version}/TextShot-#{version}-macos-universal.zip"
   name "TextShot"
-  desc "Lightweight, pure native macOS menu bar OCR utility"
+  desc "Lightweight, pure native menu bar OCR utility"
   homepage "https://github.com/myself659/TextShot"
 
   depends_on macos: :sonoma
 
   app "TextShot.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/TextShot.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/TextShot.app"]
   end
 
   zap trash: [
-    "~/Library/Preferences/local.TextShot.plist",
     "~/Library/Preferences/local.TextShot.dev.plist",
+    "~/Library/Preferences/local.TextShot.plist",
   ]
 end
