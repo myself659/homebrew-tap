@@ -11,6 +11,12 @@ cask "textshot" do
 
   app "TextShot.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/TextShot.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Preferences/local.TextShot.plist",
     "~/Library/Preferences/local.TextShot.dev.plist",
