@@ -1,6 +1,6 @@
 cask "textshot" do
-  version "0.1.0"
-  sha256 "58c71930546b95897d5a040081a9d82debc32d7d8b4d3428db1e3ea3fec39391"
+  version "0.2.0"
+  sha256 "2c317ebe6e764bd53da1407a346e6ec34883bc96860f356f50b53bc26d70351f"
 
   url "https://github.com/myself659/TextShot/releases/download/v#{version}/TextShot-#{version}-macos-universal.zip"
   name "TextShot"
