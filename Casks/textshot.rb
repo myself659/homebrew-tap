@@ -7,7 +7,7 @@ cask "textshot" do
   desc "Lightweight, pure native macOS menu bar OCR utility"
   homepage "https://github.com/myself659/TextShot"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "TextShot.app"
 
